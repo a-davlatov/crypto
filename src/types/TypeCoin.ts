@@ -1,0 +1,21 @@
+export type TypeCoin = {
+  availableSupply: number,
+  explorers: string[],
+  icon: string,
+  id: string,
+  marketCap: number,
+  name: string,
+  price: number,
+  priceBtc: number,
+  priceChange1d: number | string,
+  priceChange1h: number | string,
+  priceChange1w: number | string,
+  rank: number,
+  redditUrl: string,
+  symbol: string,
+  totalSupply: number,
+  twitterUrl: string,
+  volume: number,
+  websiteUrl: string,
+  coinId?: number
+}
