@@ -10,7 +10,7 @@ import type { IPane } from '@/interfaces/IPane'
 import type { TypeCoin } from '@/types/TypeCoin'
 import type { TypeTransaction } from "@/types/TypeTransaction"
 
-import PortfolioInfoBlock from '@/components/PortfolioInfoBlock.vue'
+import PortfolioInfoBlock from '@/components/portfolio/PortfolioInfoBlock.vue'
 import PortfolioHeader from '@/components/portfolio/PortfolioHeader.vue'
 import PortfolioCreateModal from '@/components/modal/PortfolioCreateModal.vue'
 import PortfolioDeleteModal from '@/components/modal/PortfolioDeleteModal.vue'

@@ -7,7 +7,7 @@ import { store } from '@/composables/store'
 import { getCoin } from '@/api/coins'
 import { useUcFirst } from '@/composables/useUcFirst'
 
-import PortfolioInfoBlock from '@/components/PortfolioInfoBlock.vue'
+import PortfolioInfoBlock from '@/components/portfolio/PortfolioInfoBlock.vue'
 import PieChart from '@/components/charts/PieChart.vue'
 import LineChart from '@/components/charts/LineChart.vue'
 
@@ -19,7 +19,6 @@ interface Props {
   panes: IPane[]
 }
 
-
 const props = defineProps<Props>()
 const transactions = defineModel<TypeTransaction[]>({ required: true })
 const assets = ref<TypeTransaction[]>([])
@@ -28,6 +27,7 @@ const loading = ref(false)
 
 const percentDifferrence = (a: number, b: number) => +(100 * Math.abs((a - b) / ((a + b) / 2))).toFixed(2)
 const portfolioName = (portfolioId: string) => props.panes.find(pane => pane.key === portfolioId)?.title
+
 const summValues = (transactions: TypeTransaction[], key: keyof TypeTransaction) => {
   return transactions
     .map((transaction) => {
@@ -35,15 +35,14 @@ const summValues = (transactions: TypeTransaction[], key: keyof TypeTransaction)
       return typeof value === 'number' ? value : 0 // Проверяем, является ли значение числом
     })
     .reduce((acc: number, v: number) => acc + v, 0) // Суммируем значения
-    .toFixed(2); // Форматируем результат до двух знаков после запятой
+    .toFixed(2) // Форматируем результат до двух знаков после запятой
 }
-const topGainer = (assets: TypeTransaction[]): TypeTransaction | undefined => {
-  if (assets.length === 0) return undefined;
 
-  return assets.reduce((max, asset) => {
-    return (asset.totalProfit || 0) > (max.totalProfit || 0) ? asset : max;
-  }, assets[0]);
-};
+const topGainer = (assets: TypeTransaction[]): TypeTransaction | undefined => {
+  if (assets.length === 0) return undefined
+
+  return assets.reduce((max, asset) => (asset.totalProfit || 0) > (max.totalProfit || 0) ? asset : max, assets[0])
+}
 
 const groupedTransactions = computed(() => {
   const groupedTransactions: Record<string, TypeTransaction[]> = assets.value.reduce((acc: Record<string, TypeTransaction[]>, c: TypeTransaction) => {

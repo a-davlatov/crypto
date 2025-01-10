@@ -12,7 +12,7 @@ import type { TypePortfolioCoin } from '@/types/TypePortfolioCoin'
 import type { TypeCoin } from '@/types/TypeCoin'
 import type { TableColumnsType } from 'ant-design-vue'
 
-import PortfolioInfoBlock from '@/components/PortfolioInfoBlock.vue'
+import PortfolioInfoBlock from '@/components/portfolio/PortfolioInfoBlock.vue'
 
 interface Props {
   portfolioId: string

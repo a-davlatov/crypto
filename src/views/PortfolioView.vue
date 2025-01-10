@@ -3,8 +3,8 @@
 import { store } from '@/composables/store'
 import { useHeaderModalOpen } from '../composables/useHeaderModalOpen'
 
-import PortfolioTabs from '@/components/PortfolioTabs.vue'
-import PortfolioInfoBlock from '@/components/PortfolioInfoBlock.vue'
+import PortfolioTabs from '@/components/portfolio/PortfolioTabs.vue'
+import PortfolioInfoBlock from '@/components/portfolio/PortfolioInfoBlock.vue'
 
 </script>
 

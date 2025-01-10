@@ -36,13 +36,25 @@ const activeKey = ref('1')
           key="2"
           tab="Sell"
         >
-          Soon
+          <a-result
+            status="404"
+            title="Under construction"
+            sub-title="Sorry, this functionality is currently under construction."
+            style="background-color: #fff"
+          >
+          </a-result>
         </a-tab-pane>
         <a-tab-pane
           key="3"
           tab="Transfer"
         >
-          Soon
+          <a-result
+            status="404"
+            title="Under construction"
+            sub-title="Sorry, this functionality is currently under construction."
+            style="background-color: #fff"
+          >
+          </a-result>
         </a-tab-pane>
       </a-tabs>
     </a-spin>
